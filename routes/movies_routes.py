@@ -1,19 +1,21 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, status
 from models.movies_models import Movie
 from services import movies_services as services
+from typing import List
 
 router = APIRouter()
 
-@router.get("/movies-start/")
+@router.get("/moviess/")
 async def read_root():
     return{"message":"Si funciona el endpoint productos"}
 
-@router.get("/movies/{movie_id}")
-async def obtener_movies(movie_id: int):
-    movies=services.obtener_movies()
-    return movies
+@router.get("/movies/{movie_id}", response_model=Movie)
+async def obtener_movie(movie_id: int):
+    movies=services.obtener_movies(movie_id)        
     if not movies:
         raise HTTPException(status_code=404, detail="No se encontraron películas")
+    return movies
+    
     
 
 @router.post("/movies/", response_model=Movie)

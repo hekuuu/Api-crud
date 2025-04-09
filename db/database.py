@@ -2,7 +2,8 @@ from pymongo import MongoClient
 import os
 from dotenv import load_dotenv
 
-load_dotenv
+load_dotenv()
+
 class Database:
     def __init__(self):
         self.client = MongoClient(os.getenv('MONGOURL'), tlsallowinvalidcertificates=True)
