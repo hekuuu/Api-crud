@@ -8,4 +8,4 @@ class Movie(BaseModel):
     year: int = Field(..., title="Year of the movie", description="Year of release")
     rating: float = Field(..., title="Rating of the movie", description="Rating of the movie")
     genres: List[str] = Field(..., title="Genres of the movie", description="List of genres associated with the movie")
-    .
+    
