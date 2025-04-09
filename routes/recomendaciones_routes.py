@@ -25,4 +25,4 @@ async def obtener_recomendaciones_por_genero(
         raise HTTPException(status_code=404, detail=f"No se encontraron películas para el género '{genre}'")
     
     return recomendaciones
-
+.

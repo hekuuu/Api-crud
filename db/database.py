@@ -17,3 +17,4 @@ class Database:
         return self.db.list_collection_names()
 
 Database = Database()
+.

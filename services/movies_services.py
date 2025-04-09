@@ -7,3 +7,4 @@ def obtener_movies(movie_id: int):
     movies = collection.find_one({"id": movie_id}, {"_id": 0})   
     # Devuelve las películas obtenidas
     return movies
+    .

@@ -26,3 +26,4 @@ app.include_router(movies_router, prefix="/v1", tags=["movies"])
 
 # Segunda API
 app.include_router(recomendaciones_router, prefix="/v2", tags=["recomendaciones"])
+.
